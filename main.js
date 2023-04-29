@@ -14,8 +14,6 @@ for (const checkbox of initCheckboxes) {
     if (checkbox.checked) {
         console.log("YES!")
         additive += parseInt(checkbox.value)
-    } else {
-        additive -= parseInt(checkbox.value)
     }
     echoCount.innerText = parseInt(echoes) + additive
 }
