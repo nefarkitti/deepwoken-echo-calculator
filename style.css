@@ -33,6 +33,8 @@ truecenter {
     border-image: url('border.png') 45%;
     border-image-width: 15px;
     border-image-outset: 2px;
+    display: grid;
+    justify-items: center;
 }
 
 .actualthing {
@@ -74,7 +76,7 @@ truecenter {
     border-image-outset: 2px;
     color: #575757;
     height: 50%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .checklist table {
@@ -146,9 +148,8 @@ truecenter {
 
 
 .misc-info {
-    display: table-caption;
     text-align: left;
-    color: #575757  ;
+    color: #575757;
 }
 
 .thing {
