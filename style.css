@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+body {
+    margin: 0;
+}
+
+.bg {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#2e4631, #000000);
+}
+
+a {
+    color: aquamarine;
+    text-decoration: none;
+}
+
+truecenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.main {
+    padding: 0.5rem;
+    color: white;
+    border: 1px solid transparent;
+    background-image: url('background.png');
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+}
+
+.actualthing {
+    width: 45vw;
+    height: 65vh;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-block;
+    width: 95%;
+    text-align: center;
+    background-color: #586865;
+    border: 1px solid transparent;
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    clear: both;
+}
+
+.subtitle {
+    text-align: left;
+    font-size: 25px;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    text-indent: 0.6rem;
+    text-shadow: 8px 5px black;
+}
+
+.checklist {
+    background-color: #E5E0CA;
+    border: 1px solid transparent;
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    color: #575757;
+    height: 50%;
+    overflow: scroll;
+}
+
+.checklist table {
+    width: 100%;
+    padding-top: 0.1rem;
+}
+.checklist table tr td {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    min-width: 50%;
+    max-width: 50%;
+    padding: 0.5rem;
+    font-size: 15px;
+    font-style: italic;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    padding-top: 0.8rem;
+}
+.checklist table tr td input {
+    float: right;
+}
+.checklist table tr td input[type=number] {
+    border: none;
+    display: flex;
+    background:none;
+    font-family: 'Roboto', sans-serif;
+    color: #575757;
+    font-weight: bolder;
+    font-size: 15px;
+    width: 40px;
+    top:0;
+}
+.checklist table tr td span {
+    font-style:normal;
+    font-weight: bolder;
+    float: right;
+}
+
+.line {
+    background-color: #575757;
+    width: 100%;
+    height: 0.09rem;
+    filter:opacity(50%);
+}
+
+.results {
+    background-color: #E5E0CA;
+    border: 1px solid transparent;
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    color: #575757;
+    height: 18%;
+    text-align: left;
+    line-height: 500%; /* <-- this is what you must define */
+}
+
+.total {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 0.7rem;
+}
+.total b {
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.misc-info {
+    display: table-caption;
+    text-align: left;
+    width: 100%;
+    color: #575757  ;
+}
+
+.thing {
+    position: fixed;
+    z-index: 100;
+    color: white;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    border: 1px solid transparent;
+    background-image: url('background.png');
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    padding: 0.5rem;
+    text-shadow: 5px 5px black;
+}
