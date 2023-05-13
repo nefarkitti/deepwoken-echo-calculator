@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+
+.material-symbols-sharp {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48
+}
+
 body {
     margin: 0;
 }
@@ -23,6 +32,7 @@ truecenter {
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
+    display: flex;
 }
 
 .main {
@@ -35,6 +45,67 @@ truecenter {
     border-image-outset: 2px;
     display: grid;
     justify-items: center;
+    clear: both;
+}
+
+.reset-popup {
+    padding: 0.5rem;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    color: #303633;
+    border: 1px solid transparent;
+    background-color: #E5E0CA;;
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    display: grid;
+    justify-items: center;
+    clear: both;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    width: 20vw;
+}
+.reset-popup-title {
+    padding: 0.5rem;
+    color: #E5E0CA;
+    border: 1px solid transparent;
+    background-image: url('background.png');
+    display: grid;
+    justify-items: center;
+    clear: both;
+    width: 95%;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    border-bottom: solid 3px #B3B5C1;
+    margin-bottom: 1rem;
+    font-size: 17px;
+}
+.reset-contents {
+    max-width: 80%;
+}
+
+.main-other {
+    padding: 0.5rem;
+    color: white;
+    border: 1px solid transparent;
+    background-image: url('background.png');
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    display: grid;
+    justify-items: center;
+    clear: both;
+    margin-left: 2rem;
+}
+
+.main-other .reset-btn {
+    text-align: center;
+    padding: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 17px;
+    top: 0;
 }
 
 .actualthing {
@@ -131,7 +202,7 @@ truecenter {
     color: #575757;
     height: 18%;
     text-align: left;
-    line-height: 500%; /* <-- this is what you must define */
+    line-height: 400%; /* <-- this is what you must define */
 }
 
 .total {
@@ -146,8 +217,16 @@ truecenter {
     font-family: 'Roboto', sans-serif;
 }
 
+.modifier-total {
+    position: relative;
+    float: left;
+    top: -2.5rem;
+    left: 1rem;
+    font-style: italic;
+}
 
 .misc-info {
+    font-family: 'Roboto', sans-serif;
     text-align: left;
     color: #575757;
 }
@@ -167,4 +246,121 @@ truecenter {
     border-image-outset: 2px;
     padding: 0.5rem;
     text-shadow: 5px 5px black;
+}
+
+.reset-btn {
+    position: relative;
+    float: right;
+    font-weight:100;
+    text-shadow: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    padding-right: 0.6rem;
+    background-color: #40504C;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    cursor: pointer;
+    height: fit-content;
+    text-align: center;
+    top: 0.3rem;
+    right: 0.4rem;
+}
+.reset-btn:hover {
+    background-color: #2C3835;
+}
+
+.modifiers {
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    width: 15vw;
+}
+
+.the-thing {
+    background-color: #0202025e;
+    box-shadow: 0 0 5px 2px #0202025e;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    text-indent: 5px;
+    color: #AFB7BA;
+}
+
+.thing-item {
+    display: inline;
+    margin-bottom: 0.3rem;
+    display: list-item;
+    list-style: none;
+    cursor: pointer;
+}
+.thing-item:hover {
+    color: #F0F5F8;
+}
+
+.thing-item-toggled {
+    color: #F3F6E5 !important;
+}
+.thing-item-toggled .checkmark {
+    visibility: visible;
+}
+
+.checkmark {
+    display: inline;
+    vertical-align: unset;
+    display: unset !important;
+    margin-left: 0.2rem;
+    visibility: hidden;
+    font-size: 14px !important;
+}
+
+.value {
+    float: right;
+    margin-right: 0.5rem;
+    position: relative;
+}
+
+.button-holder {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.button-holder tr {
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    display: inline-table;
+}
+.button-holder tr th {
+    text-align: center !important;
+    max-width: 50%;
+    min-width: 50%;
+}
+
+.buttonstylized {
+    display: block;
+        font-weight:100;
+        text-shadow: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        border-image: url('border.png') 45%;
+        border-image-width: 15px;
+        border-image-outset: 2px;
+        background-color: #40504C;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        cursor: pointer;
+        height: fit-content;
+        text-align: center;
+        color: white;
+        padding: 0.2rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        max-width: fit-content;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+}
+.buttonstylized:hover {
+    background-color: #2C3835;
 }
