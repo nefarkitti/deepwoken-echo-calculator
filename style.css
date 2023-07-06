@@ -85,7 +85,21 @@ truecenter {
     max-width: 80%;
 }
 
-.main-other {
+.main-left {
+    padding: 0.5rem;
+    color: white;
+    border: 1px solid transparent;
+    background-image: url('background.png');
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    display: grid;
+    justify-items: center;
+    clear: both;
+    margin-right: 2rem;
+}
+
+.main-right {
     padding: 0.5rem;
     color: white;
     border: 1px solid transparent;
@@ -99,7 +113,7 @@ truecenter {
     margin-left: 2rem;
 }
 
-.main-other .reset-btn {
+.main-right .reset-btn {
     text-align: center;
     padding: 0;
     padding-left: 0.5rem;
