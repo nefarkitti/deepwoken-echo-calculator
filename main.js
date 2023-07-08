@@ -86,20 +86,24 @@ function test(e) {
     modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
 }
 
-let checkboxes = document.querySelectorAll("input[type='checkbox']");
+let checkboxes = document.querySelectorAll("#triumph");
 for (const checkbox of checkboxes) {
-    checkbox.addEventListener("change", function() {  
-        console.log(checkbox.value)
-        if (checkbox.dataset.dataname) {
-            data[checkbox.dataset.dataname] = checkbox.checked;
-            saveEverything()
-        }
-        if (checkbox.checked) {
+    checkbox.addEventListener("click", function() {  
+        console.log(checkbox.dataset.value)
+        let checked = false
+        if (!checkbox.classList.contains("done")) {
             console.log("YES!")
-            
-            additive += parseInt(checkbox.value)
+            checked = true
+            checkbox.classList.add("done");
+            additive += parseInt(checkbox.dataset.value)
         } else {
-            additive -= parseInt(checkbox.value)
+            checkbox.classList.remove("done");
+            checked = false
+            additive -= parseInt(checkbox.dataset.value)
+        }
+        if (checkbox.dataset.dataname) {
+            data[checkbox.dataset.dataname] = checked;
+            saveEverything()
         }
         echoCount.innerText = parseInt(echoes) + additive
         modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
@@ -135,11 +139,11 @@ function loadEverything() {
         document.getElementById("powerinpt").value = data.power;
         for (const checkbox of checkboxes) {
             if (checkbox.dataset.dataname && data[checkbox.dataset.dataname] == true) {
-                checkbox.checked = true
-                additive += parseInt(checkbox.value)
+                checkbox.classList.add("done");
+                additive += parseInt(checkbox.dataset.value)
                 echoCount.innerText = parseInt(echoes) + additive
             } else {
-                checkbox.checked = false
+                checkbox.classList.remove("done");
             }
         }
         for (const thinglol of modifiers) {

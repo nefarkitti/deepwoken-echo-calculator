@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="bg">
-        <div class="thing">v2.1<br>as of 03/07/2023</div>
+        <div class="thing">v3<br>as of 03/07/2023</div>
     </div>
     <truecenter>
         <!--<div class="main-left">
@@ -40,63 +40,63 @@
             <div class="actualthing">
                 <div class="title">Your Legacy</div>
                 <div class="subtitle">Triumphs<span class="reset-btn" onclick="resetPopup()">reset all</span></div>
-                <div class="checklist">
+                <div class="checklist" style="user-select: none;">
                     <table>
                         <tr>
                             <td>Power<input id="powerinpt" type="number"min="0" max="19"><span>+0.75 x</span><div class="line"></div></td>
-                            <td>Cooked a Meal<input type="checkbox" value="1" data-dataname="cookedMeal"><span>+1</span><div class="line"></div></td>
+                            <td id="triumph" data-value="1" data-dataname="cookedMeal">Cooked a Meal<!--<input type="checkbox" value="1" data-dataname="cookedMeal">--><span>+1</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Caught Fish<input type="checkbox" value="1" data-dataname="caughtFish"><span>+1</span><div class="line"></div></td>
-                            <td>Modified a Mantra<input type="checkbox" value="1" data-dataname="modifiedMantra"><span>+1</span><div class="line"></div></td>
+                            <td id="triumph" data-value="1" data-dataname="caughtFish">Caught Fish<!--<input type="checkbox" value="1" data-dataname="caughtFish">--><span>+1</span><div class="line"></div></td>
+                            <td id="triumph" data-value="1" data-dataname="modifiedMantra">Modified a Mantra<!--<input type="checkbox" value="1" data-dataname="modifiedMantra">--><span>+1</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Refining Pure Ore<input type="checkbox" value="1" data-dataname="refinedPureOre"><span>+1</span><div class="line"></div></td>
-                            <td>Won an Arena Match<input type="checkbox" value="1" data-dataname="wonArenaMatch"><span>+1</span><div class="line"></div></td>
+                            <td id="triumph" data-value="1" data-dataname="refinedPureOre">Refining Pure Ore<!--<input type="checkbox" value="1" data-dataname="refinedPureOre">--><span>+1</span><div class="line"></div></td>
+                            <td id="triumph" data-value="1" data-dataname="wonArenaMatch">Won an Arena Match<!--<input type="checkbox" value="1" data-dataname="wonArenaMatch">--><span>+1</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Consumed a Lotus Flask<input type="checkbox" value="2" data-dataname="consumedLotusFlask"><span>+2</span><div class="line"></div></td>
-                            <td>Crafted a Master Outfit<input type="checkbox" value="2" data-dataname="craftedMasterOutfit"><span>+2</span><div class="line"></div></td>
+                            <td id="triumph" data-value="2" data-dataname="consumedLotusFlask">Consumed a Lotus Flask<!--<input type="checkbox" value="2" data-dataname="consumedLotusFlask">--><span>+2</span><div class="line"></div></td>
+                            <td id="triumph" data-value="2" data-dataname="craftedMasterOutfit">Crafted a Master Outfit<!--<input type="checkbox" value="2" data-dataname="craftedMasterOutfit">--><span>+2</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Bargained with Shrines<input type="checkbox" value="2" data-dataname="bargainedShrines"><span>+2</span><div class="line"></div></td>
-                            <td>Bargained with Misérables<input type="checkbox" value="2" data-dataname="bargainedMiserables"><span>+2</span><div class="line"></div></td>
+                            <td id="triumph" data-value="2" data-dataname="bargainedShrines">Bargained with Shrines<!--<input type="checkbox" value="2" data-dataname="bargainedShrines">--><span>+2</span><div class="line"></div></td>
+                            <td id="triumph" data-value="2" data-dataname="bargainedMiserables">Bargained with Misérables<!--<input type="checkbox" value="2" data-dataname="bargainedMiserables">--><span>+2</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Unbound<input type="checkbox" value="5" data-dataname="unbounded"><span>+5</span><div class="line"></div></td>
-                            <td>Oath<input type="checkbox" value="5" data-dataname="oath"><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="unbounded">Unbound<!--<input type="checkbox" data-value="5" data-dataname="unbounded">--><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="oath">Oath<!--<input type="checkbox" data-value="5" data-dataname="oath">--><span>+5</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Soulbound a Weapon<input type="checkbox" value="5" data-dataname="soulboundedWeapon"><span>+5</span><div class="line"></div></td>
-                            <td>Used Enchant Stone<input type="checkbox" value="5" data-dataname="usedEnchantStone"><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="soulboundedWeapon">Soulbound a Weapon<!--<input type="checkbox" data-value="5" data-dataname="soulboundedWeapon">--><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="usedEnchantStone">Used Enchant Stone<!--<input type="checkbox" data-value="5" data-dataname="usedEnchantStone">--><span>+5</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Traded with Laplace<input type="checkbox" value="5" data-dataname="tradedLaplace"><span>+5</span><div class="line"></div></td>
-                            <td>Used Alloy<input type="checkbox" value="5" data-dataname="alloyUsed"><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="tradedLaplace">Traded with Laplace<!--<input type="checkbox" data-value="5" data-dataname="tradedLaplace">--><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="alloyUsed">Used Alloy<!--<input type="checkbox" data-value="5" data-dataname="alloyUsed">--><span>+5</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Murmur<input type="checkbox" value="5" data-dataname="murmur"><span>+5</span><div class="line"></div></td>
-                            <td>Defeated the Dread Serpent<input type="checkbox" value="5" data-dataname="kaidoDefeated"><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="murmur">Murmur<!--<input type="checkbox" data-value="5" data-dataname="murmur">--><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="kaidoDefeated">Defeated the Dread Serpent<!--<input type="checkbox" data-value="5" data-dataname="kaidoDefeated">--><span>+5</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Defeated the Duke<input type="checkbox" value="5" data-dataname="dukeDefeated"><span>+5</span><div class="line"></div></td>
-                            <td>Defeated Primadon<input type="checkbox" value="5" data-dataname="primadonDefeated"><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="dukeDefeated">Defeated the Duke<!--<input type="checkbox" data-value="5" data-dataname="dukeDefeated">--><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="primadonDefeated">Defeated Primadon<!--<input type="checkbox" data-value="5" data-dataname="primadonDefeated">--><span>+5</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Defeated the Ferryman<input type="checkbox" value="5" data-dataname="ferrymanDefeated"><span>+5</span><div class="line"></div></td>
-                            <td>Defeated Chaser<input type="checkbox" value="5" data-dataname="chaserDefeated"><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="ferrymanDefeated">Defeated the Ferryman<!--<input type="checkbox" data-value="5" data-dataname="ferrymanDefeated">--><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="chaserDefeated">Defeated Chaser<!--<input type="checkbox" data-value="5" data-dataname="chaserDefeated">--><span>+5</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Obtained the Deepshore Fossil<input type="checkbox" value="5" data-dataname="deepshore"><span>+5</span><div class="line"></div></td>
-                            <td>Defeated Scion of Ethiron<input type="checkbox" value="10" data-dataname="defeatedEthiron"><span>+10</span><div class="line"></div></td>
+                            <td id="triumph" data-value="5" data-dataname="deepshore">Obtained the Deepshore Fossil<!--<input type="checkbox" data-value="5" data-dataname="deepshore">--><span>+5</span><div class="line"></div></td>
+                            <td id="triumph" data-value="10" data-dataname="defeatedEthiron">Defeated the Scion of Ethiron<!--<input type="checkbox" data-value="10" data-dataname="defeatedEthiron">--><span>+10</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Defeated Hell Mode<input type="checkbox" value="10" data-dataname="hellmode"><span>+10</span><div class="line"></div></td>
-                            <td>Hookless Eternal Gale<input type="checkbox" value="10" data-dataname="hookless"><span>+10</span><div class="line"></div></td>
+                            <td id="triumph" data-value="10" data-dataname="hellmode">Defeated Hell Mode<!--<input type="checkbox" data-value="10" data-dataname="hellmode">--><span>+10</span><div class="line"></div></td>
+                            <td id="triumph" data-value="10" data-dataname="hookless">Hookless Eternal Gale<!--<input type="checkbox" data-value="10" data-dataname="hookless">--><span>+10</span><div class="line"></div></td>
                         </tr>
                         <tr>
-                            <td>Resonance<input type="checkbox" value="15" data-dataname="resonance"><span>+15</span><div class="line"></div></td>
-                            <td>Bargained with Yun'Shul<input type="checkbox" value="2" data-dataname="bargainedYunshul"><span>+2</span><div class="line"></div></td>
+                            <td id="triumph" data-value="15" data-dataname="resonance">Resonance<!--<input type="checkbox" value="15" data-dataname="resonance">--><span>+15</span><div class="line"></div></td>
+                            <td id="triumph" data-value="2" data-dataname="bargainedYunshul">Bargained with Yun'Shul<!--<input type="checkbox" value="2" data-dataname="bargainedYunshul">--><span>+2</span><div class="line"></div></td>
                         </tr>
                     </table> 
                 </div>
@@ -115,7 +115,7 @@
             <div class="modifiers">
                 <div class="title">Modifiers</div>
                 <br><br>
-                <div class="the-thing">
+                <div class="the-thing" style="user-select: none;">
                     <span class="thing-item" id="thing-item" data-multiplier="0.5" data-toggled="0" data-modifierid="fragileheart">Fragile Heart<span class="material-symbols-sharp checkmark" hidden>star</span><span class="value">+0.5x</span></span>
                     <span class="thing-item" id="thing-item" data-multiplier="0.1" data-toggled="0" data-modifierid="crestfallen">Crestfallen<span class="material-symbols-sharp checkmark" hidden>star</span><span class="value">+0.1x</span></span>
                     <span class="thing-item" id="thing-item" data-multiplier="0.2" data-toggled="0" data-modifierid="deepchampion">Deep Champion<span class="material-symbols-sharp checkmark" hidden>star</span><span class="value">+0.2x</span></span>
