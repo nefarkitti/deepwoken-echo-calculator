@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="bg">
-        <div class="thing">v3<br>as of 03/07/2023</div>
+        <div class="thing"><img src="favicon.png" width="75" height="75" alt="" style="image-rendering: pixelated;"><br>v3.1<br>as of 03/07/2023</div>
     </div>
     <truecenter>
         <!--<div class="main-left">
@@ -39,7 +39,7 @@
         <div class="main">
             <div class="actualthing">
                 <div class="title">Your Legacy</div>
-                <div class="subtitle">Triumphs<span class="reset-btn" onclick="resetPopup()">reset all</span></div>
+                <div class="subtitle">Triumphs<span class="reset-btn" onclick="resetPopup()">reset all</span><span class="reset-btn" onclick="toggleAll()">toggle all</span></div>
                 <div class="checklist" style="user-select: none;">
                     <table>
                         <tr>
@@ -129,6 +129,7 @@
                     <span class="thing-item" id="thing-item" data-multiplier="0.2" data-toggled="0" data-modifierid="onebit">One Bit<span class="material-symbols-sharp checkmark">star</span><span class="value">+0.2x</span></span>
                     <span class="thing-item" style="padding-bottom: 0.2rem;" id="thing-item" data-multiplier="0.2" data-toggled="0" data-modifierid="destined">Destined<span class="material-symbols-sharp checkmark">star</span><span class="value">+0.2x</span></span>
                 </div>
+                <span class="toggle-btn" onclick="toggleAllModifiers()">toggle all</span>
             </div>
             <!--<span class="reset-btn">reset</span>-->
         </div>

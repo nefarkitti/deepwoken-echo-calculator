@@ -96,7 +96,7 @@ truecenter {
     display: grid;
     justify-items: center;
     clear: both;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
 }
 
 .main-right {
@@ -110,7 +110,7 @@ truecenter {
     display: grid;
     justify-items: center;
     clear: both;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
 }
 
 .main-right .reset-btn {
@@ -275,6 +275,7 @@ truecenter {
 }
 
 .reset-btn {
+    user-select: none;
     position: relative;
     float: right;
     font-weight:100;
@@ -292,8 +293,34 @@ truecenter {
     text-align: center;
     top: 0.3rem;
     right: 0.4rem;
+    margin-right: 0.5rem;
 }
 .reset-btn:hover {
+    background-color: #2C3835;
+}
+
+.toggle-btn {
+    user-select: none;
+    display: inline-block;
+    font-weight:100;
+    text-shadow: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    padding-right: 0.6rem;
+    background-color: #40504C;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    cursor: pointer;
+    height: fit-content;
+    text-align: center;
+    padding: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+.toggle-btn:hover {
     background-color: #2C3835;
 }
 

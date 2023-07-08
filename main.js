@@ -128,6 +128,35 @@ for (const thinglol of modifiers) {
     })
 }
 
+function toggleAll() {
+    for (const checkbox of checkboxes) {
+        if (!checkbox.classList.contains("done")) {
+            console.log("YES!")
+            checked = true
+            checkbox.classList.add("done");
+            additive += parseInt(checkbox.dataset.value)
+        }
+        data[checkbox.dataset.dataname] = checked;
+        echoCount.innerText = parseInt(echoes) + additive
+        modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
+        PowerInpt.value = 19
+        test()
+        saveEverything()
+    }
+}
+function toggleAllModifiers() {
+    for (const thinglol of modifiers) {
+        console.log(thinglol.classList.contains("thing-item-toggled"))
+        if (thinglol.classList.contains("thing-item-toggled") == false) {
+            modifier += parseFloat(thinglol.dataset.multiplier) * 100
+            data.modifiers.push(thinglol.dataset.modifierid)
+            saveEverything()
+            thinglol.classList.add("thing-item-toggled");
+        }
+        modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
+    }
+}
+
 function loadEverything() {
     // this parts gonna be the hardest!
     const getSave = localStorage.getItem("save");
