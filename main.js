@@ -1,6 +1,10 @@
 const echoCount = document.getElementById("echocount")
 const PowerInpt = document.getElementById("powerinpt")
 const modifCount = document.getElementById("modifier-total")
+const finalRank = document.getElementById("finalrank")
+const powerIndicator = document.getElementById("powerIndicator")
+const ranktext = document.getElementById("ranktext")
+const percentage = document.getElementById("percentage")
 
 let showResetPopup = false;
 
@@ -16,7 +20,7 @@ function resetPopup() {
 }
 
 let data = { // okay
-    power: 0,
+    power: 1,
     // checkmarks
     caughtFish: false,
     refinedPureOre: false,
@@ -57,8 +61,35 @@ let calc = 0.75 * 0
 echoes = Math.ceil(calc)
 echoCount.innerText = parseInt(echoes) + additive
 modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
+finalRank.innerHTML = checkRank(Math.round((parseInt(echoes) + additive) * (modifier / 100)))
+percentage.innerText = `(${Math.round(((parseInt(echoes) + additive)/140)*100)}%)`
 
-
+function checkRank(amount) {
+    let rank = "E"
+    ranktext.classList.remove("wrank")
+    if (amount >= 441  && (parseInt(echoes) + additive) >= 140) {
+        ranktext.classList.add("wrank")
+        return "W"
+    }
+    if (amount >= 140 && (parseInt(echoes) + additive) >= 140) {
+        return "S"
+    }
+    if (amount >= 115 && (parseInt(echoes) + additive) >= 115) {
+        return "A"
+    }
+    if (amount >= 90 && (parseInt(echoes) + additive) >= 90) {    
+        return "B"
+    }
+    if (amount >= 60 && (parseInt(echoes) + additive) >= 60) {
+        return "C"
+    }
+    if (amount >= 30 && (parseInt(echoes) + additive) >= 30) {
+        return "D"
+    }
+    if (amount >= 0 && (parseInt(echoes) + additive) >= 0) {
+        return "E"
+    }
+}
 
 /*let initCheckboxes = document.querySelectorAll("input[type='checkbox']");
 for (const checkbox of initCheckboxes) {
@@ -77,13 +108,18 @@ document.querySelector("#powerinpt").addEventListener("input", test);
 function test(e) {
     console.log("Detected an Update!\n")
     data.power = parseInt(PowerInpt.value)
+    powerIndicator.innerHTML = data.power
     saveEverything()
-    let calc = 0.75 * data.power
+    let calc = 0.75 * (data.power-1)
     echoes = Math.ceil(calc)
 
     echoCount.innerText = parseInt(echoes) + additive
     
     modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
+
+    finalRank.innerHTML = checkRank(Math.round((parseInt(echoes) + additive) * (modifier / 100)))
+
+    percentage.innerText = `(${Math.round(((parseInt(echoes) + additive)/140)*100)}%)`
 }
 
 let checkboxes = document.querySelectorAll("#triumph");
@@ -107,6 +143,9 @@ for (const checkbox of checkboxes) {
         }
         echoCount.innerText = parseInt(echoes) + additive
         modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
+        finalRank.innerHTML = checkRank(Math.round((parseInt(echoes) + additive) * (modifier / 100)))
+        percentage.innerText = `(${Math.round(((parseInt(echoes) + additive)/140)*100)}%)`
+    
     })
 }
 let modifiers = document.querySelectorAll("[id='thing-item']");
@@ -125,6 +164,9 @@ for (const thinglol of modifiers) {
             thinglol.classList.remove("thing-item-toggled");
         }
         modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
+        finalRank.innerHTML = checkRank(Math.round((parseInt(echoes) + additive) * (modifier / 100)))
+        percentage.innerText = `(${Math.round(((parseInt(echoes) + additive)/140)*100)}%)`
+    
     })
 }
 
@@ -139,7 +181,9 @@ function toggleAll() {
         data[checkbox.dataset.dataname] = checked;
         echoCount.innerText = parseInt(echoes) + additive
         modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
-        PowerInpt.value = 19
+        finalRank.innerHTML = checkRank(Math.round((parseInt(echoes) + additive) * (modifier / 100)))
+        percentage.innerText = `(${Math.round(((parseInt(echoes) + additive)/140)*100)}%)`
+        PowerInpt.value = 20
         test()
         saveEverything()
     }
@@ -154,6 +198,8 @@ function toggleAllModifiers() {
             thinglol.classList.add("thing-item-toggled");
         }
         modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
+        finalRank.innerHTML = checkRank(Math.round((parseInt(echoes) + additive) * (modifier / 100)))
+        percentage.innerText = `(${Math.round(((parseInt(echoes) + additive)/140)*100)}%)`
     }
 }
 
@@ -181,11 +227,14 @@ function loadEverything() {
                 thinglol.classList.add("thing-item-toggled");
             }
         }
-        let calc = 0.75 * data.power
+        let calc = 0.75 * (data.power-1)
         echoes = Math.ceil(calc)
 
         echoCount.innerText = parseInt(echoes) + additive
         modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
+        finalRank.innerHTML = checkRank(Math.round((parseInt(echoes) + additive) * (modifier / 100)))
+        percentage.innerText = `(${Math.round(((parseInt(echoes) + additive)/140)*100)}%)`
+        powerIndicator.innerHTML = data.power
     } catch (e) {
 
     }

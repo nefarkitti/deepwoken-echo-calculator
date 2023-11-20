@@ -246,9 +246,59 @@ truecenter {
 .modifier-total {
     position: relative;
     float: left;
-    top: -2.5rem;
+    top: -2.3rem;
     left: 1rem;
     font-style: italic;
+    font-size: 23px;
+}
+#percentage {
+    font-style: normal;
+    filter:opacity(30%);
+    display: inline;
+    vertical-align: top;
+}
+#powerinpt {
+    background-color: rgba(168, 164, 148, 0.812);
+    border-radius: 5px;
+    vertical-align: text-bottom;
+}
+#powerIndicator {
+
+}
+#powerinpt::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #586865;
+    cursor: pointer;
+  }
+  
+  #powerinpt::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #586865;
+    cursor: pointer;
+  }
+.wrank {
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    background: -webkit-linear-gradient(#B1EECF, #50BA8A);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.rank {
+    font-size: 70px;
+}
+.total-rank {
+    position: relative;
+    float: right;
+    top: -3.4rem;
+    right: 3rem;
+    font-style: italic;
+    font-size: 30px;
+    color: black;
 }
 
 .misc-info {
