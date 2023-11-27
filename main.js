@@ -5,6 +5,9 @@ const finalRank = document.getElementById("finalrank")
 const powerIndicator = document.getElementById("powerIndicator")
 const ranktext = document.getElementById("ranktext")
 const percentage = document.getElementById("percentage")
+const powertriumph = document.getElementById("powertriumph")
+
+let modifierToggle = 0
 
 let showResetPopup = false;
 
@@ -113,6 +116,12 @@ function test(e) {
     let calc = 0.75 * (data.power-1)
     echoes = Math.ceil(calc)
 
+    if (data.power == 20) {
+        powertriumph.classList.add("done")
+    } else {
+        powertriumph.classList.remove("done")
+    }
+
     echoCount.innerText = parseInt(echoes) + additive
     
     modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
@@ -196,6 +205,11 @@ function toggleAllModifiers() {
             data.modifiers.push(thinglol.dataset.modifierid)
             saveEverything()
             thinglol.classList.add("thing-item-toggled");
+        } else if (thinglol.classList.contains("thing-item-toggled") == true) {
+            modifier -= parseFloat(thinglol.dataset.multiplier) * 100
+            delete data.modifiers[data.modifiers.indexOf(thinglol.dataset.modifierid)]
+            saveEverything()
+            thinglol.classList.remove("thing-item-toggled");
         }
         modifCount.innerHTML = `with modifiers: ${parseInt(echoes) + additive} x ${modifier / 100} = ${Math.round((parseInt(echoes) + additive) * (modifier / 100))}`
         finalRank.innerHTML = checkRank(Math.round((parseInt(echoes) + additive) * (modifier / 100)))
