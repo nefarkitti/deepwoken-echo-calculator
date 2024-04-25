@@ -18,7 +18,21 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    background: radial-gradient(#2e4631, #000000);
+    background: radial-gradient(#2e4631 10%, #000000 100%);
+    background-position: center;
+
+    animation-name: animateBG;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes animateBG {
+    0% {
+        background-size: 120%;
+    }
+    100% {
+        background-size: 150%;
+    }
 }
 
 a {
