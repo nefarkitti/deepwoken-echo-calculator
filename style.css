@@ -541,6 +541,21 @@ truecenter {
         align-items: center;
         transform: none;
     }
+    truecenter.popup {
+        transform: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        pointer-events: none;
+    }
+    .reset-popup {
+        width: 50%;
+        pointer-events: all;
+    }
     .main {
         width: 90%;
         margin-top: 10px;
