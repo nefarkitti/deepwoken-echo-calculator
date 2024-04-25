@@ -128,7 +128,7 @@ truecenter {
 
 .actualthing {
     width: 45vw;
-    height: 65vh;
+    height: fit-content;
     text-align: center;
 }
 
@@ -166,6 +166,7 @@ truecenter {
     color: #575757;
     height: 50%;
     overflow-y: scroll;
+    height: 220px;
 }
 
 .checklist table {
@@ -232,7 +233,24 @@ truecenter {
     color: #575757;
     height: 18%;
     text-align: left;
-    line-height: 400%; /* <-- this is what you must define */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.resultsBetter {
+    background-color: #E5E0CA;
+    border: 1px solid transparent;
+    border-image: url('border.png') 45%;
+    border-image-width: 15px;
+    border-image-outset: 2px;
+    color: #575757;
+    height: px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .total {
@@ -240,7 +258,9 @@ truecenter {
     font-size: 30px;
     font-weight: bold;
     font-style: italic;
-    padding-left: 0.7rem;
+
+    display: flex;
+    flex-direction: column;
 }
 .total b {
     font-style: normal;
@@ -248,12 +268,10 @@ truecenter {
 }
 
 .modifier-total {
-    position: relative;
-    float: left;
-    top: -2.3rem;
-    left: 1rem;
+    font-weight: 100 !important;
     font-style: italic;
     font-size: 23px;
+    text-align: left;
 }
 #percentage {
     font-style: normal;
@@ -296,13 +314,10 @@ truecenter {
     font-size: 70px;
 }
 .total-rank {
-    position: relative;
-    float: right;
-    top: -3.4rem;
-    right: 3rem;
     font-style: italic;
     font-size: 30px;
     color: black;
+    margin-right: 30px;
 }
 
 .misc-info {
@@ -492,4 +507,79 @@ truecenter {
 }
 .buttonstylized:hover {
     background-color: #2C3835;
+}
+
+@media screen and (max-width:1250px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    .main-left {
+        display: none;
+    }
+    truecenter.alt {
+        flex-direction: column;
+        display:flex;
+        position: relative  ;
+        height: 100%;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        transform: none;
+    }
+    .main {
+        width: 90%;
+        margin-top: 10px;
+    }
+    .actualthing {
+        width: 90%;
+    }
+    .resultsBetter {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .resultsBetter .total-rank {
+        margin: 0;
+    }
+    .subtitle {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .checklist table tr td {
+        font-size: 20px !important;
+        display: inline-block !important;
+        width: 100% !important;
+        max-width: 90% !important;
+    }
+    .checklist table tr {
+        width: 100%;
+        display: contents;
+    }
+    .checklist table {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+    .main-right {
+        margin: 0;
+        width: 90%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .modifiers {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    .modifiers .title {
+        margin-bottom: 10px;
+    }
+    .the-thing {
+        width: 100% !important;
+        max-width: 90% !important;
+    }
 }
